@@ -3,5 +3,37 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "@alameer/ngx-fancy-grid": {
+      "projectType": "library",
+      "root": "projects/alameer/ngx-fancy-grid",
+      "sourceRoot": "projects/alameer/ngx-fancy-grid/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/alameer/ngx-fancy-grid/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/alameer/ngx-fancy-grid/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/alameer/ngx-fancy-grid/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/alameer/ngx-fancy-grid/src/test.ts",
+            "tsConfig": "projects/alameer/ngx-fancy-grid/tsconfig.spec.json",
+            "karmaConfig": "projects/alameer/ngx-fancy-grid/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "@alameer/ngx-fancy-grid"
 }

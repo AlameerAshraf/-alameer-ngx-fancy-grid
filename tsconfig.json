@@ -2,6 +2,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@alameer/ngx-fancy-grid": [
+        "dist/alameer/ngx-fancy-grid/alameer-ngx-fancy-grid",
+        "dist/alameer/ngx-fancy-grid"
+      ]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
