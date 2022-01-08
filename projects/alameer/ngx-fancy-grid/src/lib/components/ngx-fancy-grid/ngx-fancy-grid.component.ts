@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'lib-ngx-fancy-grid',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ngx-fancy-grid.component.css']
 })
 export class NgxFancyGridComponent implements OnInit {
+  @Input() designClass = "";
 
   constructor() { }
 
