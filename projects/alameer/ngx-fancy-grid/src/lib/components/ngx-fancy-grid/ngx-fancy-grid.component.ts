@@ -1,16 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { constants } from '../../modules/constants/constants';
 
 @Component({
-  selector: 'lib-ngx-fancy-grid',
+  selector: 'ngx-fancy-grid',
   templateUrl: './ngx-fancy-grid.component.html',
   styleUrls: ['./ngx-fancy-grid.component.css']
 })
-export class NgxFancyGridComponent implements OnInit {
-  @Input() designClass = "";
+export class NgxFancyGridComponent implements OnChanges {
+  @Input('design') designClass: string = "";
+  gridStyle = "";
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
+    this.gridStyle = constants.GRID_STYLE[this.designClass]
   }
-
 }

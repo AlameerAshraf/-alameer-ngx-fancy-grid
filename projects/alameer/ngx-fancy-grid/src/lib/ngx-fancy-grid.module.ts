@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import * as fancyGridComponets from './components';
@@ -9,6 +10,7 @@ import * as fancyGridComponets from './components';
     fancyGridComponets.NgxFancyGridComponent
   ],
   imports: [
+    CommonModule
   ],
   exports: [
     fancyGridComponets.NgxFancyGridComponent
