@@ -1,26 +1,81 @@
-# FancyGrid
+# @alameer/ngx-fancy-grid 🎉
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
+This library based on a code design I found on [ColorLib](https://colorlib.com/etc/tb/Table_Fixed_Header/index.html), I found it very amazing and very fancy to be used in Angular application witgh an easy to use configurations.
 
-## Development server
+`npm install @alameer/ngx-fancy-grid --save`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Styles and Scripts Configuration
 
-## Code scaffolding
+To your `angular.json` add the following lines in the <strong> scripts section </strong>:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<code>
+"styles": [ <br>
+&nbsp; &nbsp; &nbsp; "./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/css/bootstrap.min.css", <br>
+&nbsp; &nbsp; &nbsp; "./node_modules/@alameer/ngx-fancy-grid/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css", <br>
+&nbsp; &nbsp; &nbsp; "./node_modules/@alameer/ngx-fancy-grid/assets/vendor/animate/animate.css", <br>
+&nbsp; &nbsp; &nbsp; "./node_modules/@alameer/ngx-fancy-grid/assets/vendor/perfect-scrollbar/perfect-scrollbar.css", <br>
+&nbsp; &nbsp; &nbsp; "./node_modules/@alameer/ngx-fancy-grid/assets/css/main.css",<br>
+&nbsp; &nbsp; &nbsp; "./node_modules/@alameer/ngx-fancy-grid/assets/css/util.css" <br>
+],
+</code>
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+and in the styles section add the following code: 
+
+
+<code>
+"scripts": [<br>
+&nbsp; &nbsp; &nbsp;"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/jquery/jquery-3.2.1.min.js",<br>
+&nbsp; &nbsp; &nbsp;"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/js/popper.min.js",<br>
+&nbsp; &nbsp; &nbsp;"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/js/bootstrap.min.js",<br>
+&nbsp; &nbsp; &nbsp;"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js",<br>
+&nbsp; &nbsp; &nbsp;"./node_modules/@alameer/ngx-fancy-grid/assets/js/main.js"<br>]
+</code>
+
+
+## In your module
+Import `NgxFancyGridModule` in your module, in which the grid will be used.
+
+`import { NgxFancyGridModule  } from '@alameer/ngx-fancy-grid';`
+
+<code>
+imports: [ <br>
+&nbsp; &nbsp; &nbsp;BrowserModule, <br>
+&nbsp; &nbsp; &nbsp;NgxFancyGridModule<br>
+],
+</code>
+
+## In your component - in .ts file
+Import `import { NGXheaders } from '@alameer/ngx-fancy-grid';` the headers model 
+
+After building your library with `ng build ngx-fancy-grid`, go to the dist folder `cd dist/ngx-fancy-grid` and run `npm publish`.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test ngx-fancy-grid` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Further help
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.0.
+
+## Code scaffolding
+
+Run `ng generate component component-name --project ngx-fancy-grid` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-fancy-grid`.
+> Note: Don't forget to add `--project ngx-fancy-grid` or else it will be added to the default project in your `angular.json` file. 
+
+## Build
+
+Run `ng build ngx-fancy-grid` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Publishing
+
+After building your library with `ng build ngx-fancy-grid`, go to the dist folder `cd dist/ngx-fancy-grid` and run `npm publish`.
+
+## Running unit tests
+
+Run `ng test ngx-fancy-grid` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Further help
 

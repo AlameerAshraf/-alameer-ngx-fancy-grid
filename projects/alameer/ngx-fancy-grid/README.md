@@ -39,13 +39,14 @@ Import `NgxFancyGridModule` in your module, in which the grid will be used.
 `import { NgxFancyGridModule  } from '@alameer/ngx-fancy-grid';`
 
 <code>
-&nbsp; &nbsp; &nbsp; imports: [ <br>
+imports: [ <br>
 &nbsp; &nbsp; &nbsp;BrowserModule, <br>
 &nbsp; &nbsp; &nbsp;NgxFancyGridModule<br>
 ],
 </code>
 
-## Publishing
+## In your component - in .ts file
+Import `import { NGXheaders } from '@alameer/ngx-fancy-grid';` the headers model 
 
 After building your library with `ng build ngx-fancy-grid`, go to the dist folder `cd dist/ngx-fancy-grid` and run `npm publish`.
 
