@@ -24,12 +24,15 @@ and in the styles section add the following code:
 
 
 ```JavaScript
-"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/css/bootstrap.min.css",
-"./node_modules/@alameer/ngx-fancy-grid/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css",
-"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/animate/animate.css",
-"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/perfect-scrollbar/perfect-scrollbar.css",
-"./node_modules/@alameer/ngx-fancy-grid/assets/css/main.css",
-"./node_modules/@alameer/ngx-fancy-grid/assets/css/util.css"
+            "styles": [
+              "src/styles.css",
+              "./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/css/bootstrap.min.css",
+              "./node_modules/@alameer/ngx-fancy-grid/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css",
+              "./node_modules/@alameer/ngx-fancy-grid/assets/vendor/animate/animate.css",
+              "./node_modules/@alameer/ngx-fancy-grid/assets/vendor/perfect-scrollbar/perfect-scrollbar.css",
+              "./node_modules/@alameer/ngx-fancy-grid/assets/css/main.css",
+              "./node_modules/@alameer/ngx-fancy-grid/assets/css/util.css"
+            ],
 ```
 
 
