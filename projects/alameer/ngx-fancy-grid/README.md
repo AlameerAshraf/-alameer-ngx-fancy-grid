@@ -30,19 +30,69 @@ and in the styles section add the following code:
 
 
 ## In your module
-Import `NgxFancyGridModule` in your module, in which the grid will be used.
+import `NgxFancyGridModule` in your module, in which the grid will be used.
 
-`import { NgxFancyGridModule  } from '@alameer/ngx-fancy-grid';`
+```JavaScript
+import { NgxFancyGridModule  } from '@alameer/ngx-fancy-grid';
+```
 
-<code>
-imports: [ <br>
-&nbsp; &nbsp; &nbsp;BrowserModule, <br>
-&nbsp; &nbsp; &nbsp;NgxFancyGridModule<br>
+```JavaScript
+imports: [
+    BrowserModule,
+    NgxFancyGridModule
 ],
-</code>
+```
 
 ## In your component - in .ts file
-Import `import { NGXheaders } from '@alameer/ngx-fancy-grid';` the headers model 
+To identify the yoru grid headers you need to import the `NGXheader` model and create an arry of it, define the names of the grid headers and the width in %.
+
+
+```JavaScript
+import { NGXheaders } from '@alameer/ngx-fancy-grid';
+
+
+ gridHeaders : NGXheaders[] = [
+    {
+      name: "Name",
+      width: 25
+    },
+    {
+      name: "National ID",
+      width: 25
+    },
+    {
+      name: "Salary",
+      width: 25
+    },
+    {
+      name: "Discount Val.",
+      width: 25
+    }
+  ];
+``` 
+
+Then create an array of data that will be presented in the grid, create your object with type `any[]`.
+
+> make sure that your objects attributes have the same name that you gave to your headers, because ngx-fancy-grid is using the attributes names to bind the data to the grid.
+
+This is an example for the data:
+
+```JavaScript
+  data = [
+    {
+      "Name": "Alameer Ashraf",
+      "National ID" : "29411160015878",
+      "Salary" : "27222",
+      "Discount" : "20%"
+    },
+        {
+      "Name": "Mayan Alameer Ashraf",
+      "National ID" : "29411160015878",
+      "Salary" : "27222",
+      "Discount" : "20%"
+    }
+  ]
+```
 
 After building your library with `ng build ngx-fancy-grid`, go to the dist folder `cd dist/ngx-fancy-grid` and run `npm publish`.
 
