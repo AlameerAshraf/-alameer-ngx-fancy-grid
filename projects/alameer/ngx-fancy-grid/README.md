@@ -44,6 +44,12 @@ imports: [
 ```
 
 ## In your component - in .ts file
+Select the design that you love, from set of an amazign designs as you will find here in [ColorLib](https://colorlib.com/etc/tb/Table_Fixed_Header/index.html).
+
+```JavaScript 
+    design = "Elegant"; // Select one from this set: Elegant, Red, Blue, Hacker, Hover 
+```
+
 To identify the yoru grid headers you need to import the `NGXheader` model and create an arry of it, define the names of the grid headers and the width in %.
 
 
@@ -95,3 +101,19 @@ This is an example for the data:
 ```
 
 > Mayan is my daughter, she is the perfect human that I've ever met 😍. 
+
+## In your HTML file - .HTML 
+In your html code, use the ngx-fancy-grid as below:
+
+```HTML
+<ngx-fancy-grid [design]="design" [headers]="gridHeaders" [data]="data"></ngx-fancy-grid>
+```
+
+
+> @alameer/ngx-fancy-grid development roadmap:
+> - [X] Dynamically bind data to our grid.
+> - [ ] Pagination 
+> - [ ] Data Search.
+> - [ ] Data Export as HTML, PDF, EXCEL.
+> - [ ] New (4) grid designs.
+> - [ ] Sorting grid data. 

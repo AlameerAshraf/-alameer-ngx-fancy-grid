@@ -8,75 +8,112 @@ This library based on a code design I found on [ColorLib](https://colorlib.com/e
 
 To your `angular.json` add the following lines in the <strong> scripts section </strong>:
 
-<code>
-"styles": [ <br>
-&nbsp; &nbsp; &nbsp; "./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/css/bootstrap.min.css", <br>
-&nbsp; &nbsp; &nbsp; "./node_modules/@alameer/ngx-fancy-grid/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css", <br>
-&nbsp; &nbsp; &nbsp; "./node_modules/@alameer/ngx-fancy-grid/assets/vendor/animate/animate.css", <br>
-&nbsp; &nbsp; &nbsp; "./node_modules/@alameer/ngx-fancy-grid/assets/vendor/perfect-scrollbar/perfect-scrollbar.css", <br>
-&nbsp; &nbsp; &nbsp; "./node_modules/@alameer/ngx-fancy-grid/assets/css/main.css",<br>
-&nbsp; &nbsp; &nbsp; "./node_modules/@alameer/ngx-fancy-grid/assets/css/util.css" <br>
-],
-</code>
-
+```JavaScript
+"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/jquery/jquery-3.2.1.min.js",
+"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/js/popper.min.js",
+"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/js/bootstrap.min.js",
+"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js",
+"./node_modules/@alameer/ngx-fancy-grid/assets/js/main.js"
+```
 
 and in the styles section add the following code: 
 
 
-<code>
-"scripts": [<br>
-&nbsp; &nbsp; &nbsp;"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/jquery/jquery-3.2.1.min.js",<br>
-&nbsp; &nbsp; &nbsp;"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/js/popper.min.js",<br>
-&nbsp; &nbsp; &nbsp;"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/js/bootstrap.min.js",<br>
-&nbsp; &nbsp; &nbsp;"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js",<br>
-&nbsp; &nbsp; &nbsp;"./node_modules/@alameer/ngx-fancy-grid/assets/js/main.js"<br>]
-</code>
+```JavaScript
+"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/css/bootstrap.min.css",
+"./node_modules/@alameer/ngx-fancy-grid/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css",
+"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/animate/animate.css",
+"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/perfect-scrollbar/perfect-scrollbar.css",
+"./node_modules/@alameer/ngx-fancy-grid/assets/css/main.css",
+"./node_modules/@alameer/ngx-fancy-grid/assets/css/util.css"
+```
 
 
 ## In your module
-Import `NgxFancyGridModule` in your module, in which the grid will be used.
+import `NgxFancyGridModule` in your module, in which the grid will be used.
 
-`import { NgxFancyGridModule  } from '@alameer/ngx-fancy-grid';`
+```JavaScript
+import { NgxFancyGridModule  } from '@alameer/ngx-fancy-grid';
+```
 
-<code>
-imports: [ <br>
-&nbsp; &nbsp; &nbsp;BrowserModule, <br>
-&nbsp; &nbsp; &nbsp;NgxFancyGridModule<br>
+```JavaScript
+imports: [
+    BrowserModule,
+    NgxFancyGridModule
 ],
-</code>
+```
 
 ## In your component - in .ts file
-Import `import { NGXheaders } from '@alameer/ngx-fancy-grid';` the headers model 
+Select the design that you love, from set of an amazign designs as you will find here in [ColorLib](https://colorlib.com/etc/tb/Table_Fixed_Header/index.html).
 
-After building your library with `ng build ngx-fancy-grid`, go to the dist folder `cd dist/ngx-fancy-grid` and run `npm publish`.
+```JavaScript 
+    design = "Elegant"; // Select one from this set: Elegant, Red, Blue, Hacker, Hover 
+```
 
-## Running unit tests
+To identify the yoru grid headers you need to import the `NGXheader` model and create an arry of it, define the names of the grid headers and the width in %.
 
-Run `ng test ngx-fancy-grid` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Further help
+```JavaScript
+import { NGXheaders } from '@alameer/ngx-fancy-grid';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.0.
+ gridHeaders : NGXheaders[] = [
+    {
+      name: "Name",
+      width: 25
+    },
+    {
+      name: "National ID",
+      width: 25
+    },
+    {
+      name: "Salary",
+      width: 25
+    },
+    {
+      name: "Discount Val.",
+      width: 25
+    }
+  ];
+``` 
 
-## Code scaffolding
+Then create an array of data that will be presented in the grid, create your object with type `any[]`.
 
-Run `ng generate component component-name --project ngx-fancy-grid` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-fancy-grid`.
-> Note: Don't forget to add `--project ngx-fancy-grid` or else it will be added to the default project in your `angular.json` file. 
+> make sure that your objects attributes have the same name that you gave to your headers, because ngx-fancy-grid is using the attributes names to bind the data to the grid.
 
-## Build
+This is an example for the data:
 
-Run `ng build ngx-fancy-grid` to build the project. The build artifacts will be stored in the `dist/` directory.
+```JavaScript
+  data = [
+    {
+      "Name": "Alameer Ashraf",
+      "National ID" : "2434344532323",
+      "Salary" : "2332",
+      "Discount" : "20%"
+    },
+        {
+      "Name": "Mayan Alameer Ashraf",
+      "National ID" : "23234657645",
+      "Salary" : "342213",
+      "Discount" : "20%"
+    }
+  ];
+```
 
-## Publishing
+> Mayan is my daughter, she is the perfect human that I've ever met 😍. 
 
-After building your library with `ng build ngx-fancy-grid`, go to the dist folder `cd dist/ngx-fancy-grid` and run `npm publish`.
+## In your HTML file - .HTML 
+In your html code, use the ngx-fancy-grid as below:
 
-## Running unit tests
+```HTML
+<ngx-fancy-grid [design]="design" [headers]="gridHeaders" [data]="data"></ngx-fancy-grid>
+```
 
-Run `ng test ngx-fancy-grid` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+> @alameer/ngx-fancy-grid development roadmap:
+> - [X] Dynamically bind data to our grid.
+> - [ ] Pagination 
+> - [ ] Data Search.
+> - [ ] Data Export as HTML, PDF, EXCEL.
+> - [ ] New (4) grid designs.
+> - [ ] Sorting grid data. 
