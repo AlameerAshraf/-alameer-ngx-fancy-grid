@@ -3,7 +3,7 @@
 This library based on a code design I found on [ColorLib](https://colorlib.com/etc/tb/Table_Fixed_Header/index.html), I found it very amazing and very fancy to be used in Angular application witgh an easy to use configurations.
 
 ## Designs
-<a href="https://ibb.co/0CQyTcM"><img src="https://i.ibb.co/GWFQy02/image.png" alt="image" border="0"></a>
+<a href="https://ibb.co/BHpJV2H"><img src="https://i.ibb.co/wZkqNhZ/image.png" alt="image" border="0"></a>
   
 
 `npm install @alameer/ngx-fancy-grid --save`
