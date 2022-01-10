@@ -115,7 +115,7 @@ In your html code, use the ngx-fancy-grid as below:
 
 
 > @alameer/ngx-fancy-grid development roadmap:
-> - [X] Dynamically bind data to our grid.
+> - [X] Dynamically bind data to the grid.
 > - [ ] Pagination 
 > - [ ] Data Search.
 > - [ ] Data Export as HTML, PDF, EXCEL.
