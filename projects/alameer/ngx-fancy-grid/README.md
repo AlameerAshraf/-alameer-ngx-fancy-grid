@@ -23,14 +23,17 @@ To your `angular.json` add the following lines in the <strong> scripts section <
 and in the styles section add the following code: 
 
 
-<code>
-"scripts": [<br>
-&nbsp; &nbsp; &nbsp;"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/jquery/jquery-3.2.1.min.js",<br>
-&nbsp; &nbsp; &nbsp;"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/js/popper.min.js",<br>
-&nbsp; &nbsp; &nbsp;"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/js/bootstrap.min.js",<br>
-&nbsp; &nbsp; &nbsp;"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js",<br>
-&nbsp; &nbsp; &nbsp;"./node_modules/@alameer/ngx-fancy-grid/assets/js/main.js"<br>]
-</code>
+```JavaScript
+            "styles": [
+              "src/styles.css",
+              "./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/css/bootstrap.min.css",
+              "./node_modules/@alameer/ngx-fancy-grid/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css",
+              "./node_modules/@alameer/ngx-fancy-grid/assets/vendor/animate/animate.css",
+              "./node_modules/@alameer/ngx-fancy-grid/assets/vendor/perfect-scrollbar/perfect-scrollbar.css",
+              "./node_modules/@alameer/ngx-fancy-grid/assets/css/main.css",
+              "./node_modules/@alameer/ngx-fancy-grid/assets/css/util.css"
+            ],
+```
 
 
 ## In your module
