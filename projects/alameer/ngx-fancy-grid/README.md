@@ -9,12 +9,11 @@ This library based on a code design I found on [ColorLib](https://colorlib.com/e
 To your `angular.json` add the following lines in the <strong> scripts section </strong>:
 
 ```JavaScript
-"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/css/bootstrap.min.css",
-"./node_modules/@alameer/ngx-fancy-grid/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css", 
-"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/animate/animate.css",
-"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/perfect-scrollbar/perfect-scrollbar.css",
-"./node_modules/@alameer/ngx-fancy-grid/assets/css/main.css",
-"./node_modules/@alameer/ngx-fancy-grid/assets/css/util.css" <br>
+"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/jquery/jquery-3.2.1.min.js",
+"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/js/popper.min.js",
+"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/js/bootstrap.min.js",
+"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js",
+"./node_modules/@alameer/ngx-fancy-grid/assets/js/main.js"
 ```
 
 and in the styles section add the following code: 
