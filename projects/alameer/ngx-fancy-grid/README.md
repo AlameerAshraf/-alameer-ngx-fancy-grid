@@ -1,24 +1,123 @@
-# NgxFancyGrid
+# @alameer/ngx-fancy-grid 🎉
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.0.
+This library based on a code design I found on [ColorLib](https://colorlib.com/etc/tb/Table_Fixed_Header/index.html), I found it very amazing and very fancy to be used in Angular application witgh an easy to use configurations.
 
-## Code scaffolding
+## Designs
+<a href="https://ibb.co/BHpJV2H"><img src="https://i.ibb.co/wZkqNhZ/image.png" alt="image" border="0"></a>
 
-Run `ng generate component component-name --project ngx-fancy-grid` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-fancy-grid`.
-> Note: Don't forget to add `--project ngx-fancy-grid` or else it will be added to the default project in your `angular.json` file. 
 
-## Build
+`npm install @alameer/ngx-fancy-grid --save`
 
-Run `ng build ngx-fancy-grid` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Styles and Scripts Configuration
 
-## Publishing
+To your `angular.json` add the following lines in the <strong> scripts section </strong>:
 
-After building your library with `ng build ngx-fancy-grid`, go to the dist folder `cd dist/ngx-fancy-grid` and run `npm publish`.
+```JavaScript
+"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/jquery/jquery-3.2.1.min.js",
+"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/js/popper.min.js",
+"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/js/bootstrap.min.js",
+"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js",
+"./node_modules/@alameer/ngx-fancy-grid/assets/js/main.js"
+```
 
-## Running unit tests
+and in the styles section add the following code: 
 
-Run `ng test ngx-fancy-grid` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Further help
+```JavaScript
+"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/bootstrap/css/bootstrap.min.css",
+"./node_modules/@alameer/ngx-fancy-grid/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css",
+"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/animate/animate.css",
+"./node_modules/@alameer/ngx-fancy-grid/assets/vendor/perfect-scrollbar/perfect-scrollbar.css",
+"./node_modules/@alameer/ngx-fancy-grid/assets/css/main.css",
+"./node_modules/@alameer/ngx-fancy-grid/assets/css/util.css"
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## In your module
+import `NgxFancyGridModule` in your module, in which the grid will be used.
+
+```JavaScript
+import { NgxFancyGridModule  } from '@alameer/ngx-fancy-grid';
+```
+
+```JavaScript
+imports: [
+    BrowserModule,
+    NgxFancyGridModule
+],
+```
+
+## In your component - in .ts file
+Select the design that you love, from set of an amazign designs as you will find here in [ColorLib](https://colorlib.com/etc/tb/Table_Fixed_Header/index.html).
+
+```JavaScript 
+    design = "Elegant"; // Select one from this set: Elegant, Red, Blue, Hacker, Hover 
+```
+
+To identify the yoru grid headers you need to import the `NGXheader` model and create an arry of it, define the names of the grid headers and the width in %.
+
+
+```JavaScript
+import { NGXheaders } from '@alameer/ngx-fancy-grid';
+
+
+ gridHeaders : NGXheaders[] = [
+    {
+      name: "Name",
+      width: 25
+    },
+    {
+      name: "National ID",
+      width: 25
+    },
+    {
+      name: "Salary",
+      width: 25
+    },
+    {
+      name: "Discount Val.",
+      width: 25
+    }
+  ];
+``` 
+
+Then create an array of data that will be presented in the grid, create your object with type `any[]`.
+
+> make sure that your objects attributes have the same name that you gave to your headers, because ngx-fancy-grid is using the attributes names to bind the data to the grid.
+
+This is an example for the data:
+
+```JavaScript
+  data = [
+    {
+      "Name": "Alameer Ashraf",
+      "National ID" : "2434344532323",
+      "Salary" : "2332",
+      "Discount" : "20%"
+    },
+        {
+      "Name": "Mayan Alameer Ashraf",
+      "National ID" : "23234657645",
+      "Salary" : "342213",
+      "Discount" : "20%"
+    }
+  ];
+```
+
+> Mayan is my daughter, she is the perfect human that I've ever met 😍. 
+
+## In your HTML file - .HTML 
+In your html code, use the ngx-fancy-grid as below:
+
+```HTML
+<ngx-fancy-grid [design]="design" [headers]="gridHeaders" [data]="data"></ngx-fancy-grid>
+```
+
+
+> @alameer/ngx-fancy-grid development roadmap:
+> - [X] Dynamically bind data to the grid.
+> - [ ] Pagination 
+> - [ ] Data Search.
+> - [ ] Data Export as HTML, PDF, EXCEL.
+> - [ ] New (4) grid designs.
+> - [ ] Sorting grid data. 
